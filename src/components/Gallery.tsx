@@ -10,16 +10,19 @@ const items = [
     src: "/breadboard-setup.png",
     title: "Electronics Wiring",
     caption: "ESP32 + A4988 drivers, OLED, and 12V power layout.",
+    info: "A clean schematic to power and control all hardware."
   },
   {
     src: "/mechanical-drawing.jpg",
     title: "Mechanical Layout",
     caption: "Board-level dimensions and mounting blueprint (mm).",
+    info: "Precise mechanical design for efficient assembly."
   },
   {
     src: "/ui-and-cutter.png",
     title: "UI and Cutter",
     caption: "On-device OLED controls and automated stripping action.",
+    info: "Intuitive UI for seamless control of the cutter."
   },
 ];
 
@@ -42,17 +45,20 @@ const Gallery = () => {
   }, []);
 
   return (
-    <section id="gallery" className="container mx-auto px-4 py-12">
-      <div className="mb-8 text-center relative z-10">
-        <h2 className="text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient-x">
+    <section id="gallery" className="container mx-auto px-4 py-12 mb-20">
+      {/* Cool Heading */}
+      <div className="mb-12 text-center relative z-10">
+        <h2 className="text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient-x">
           Build Gallery
         </h2>
-        <p className="mt-2 text-muted-foreground max-w-xl mx-auto">
-          Highlights from the electronics, mechanical design, and user interface.
+        <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full mt-2 animate-pulse"></div>
+        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
+          Explore highlights from electronics, mechanical design, and user interface.
         </p>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Gallery Grid */}
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item, index) => (
           <Card
             key={item.title}
@@ -75,9 +81,14 @@ const Gallery = () => {
                 />
 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-center p-4">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
                   <p className="text-white text-sm">{item.caption}</p>
                 </div>
+              </div>
+
+              {/* Info below image */}
+              <div className="px-4 py-2">
+                <p className="text-sm text-muted-foreground">{item.info}</p>
               </div>
             </CardContent>
           </Card>
