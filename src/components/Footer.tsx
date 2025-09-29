@@ -102,7 +102,7 @@ const Footer = () => {
             {[Github, Linkedin, Twitter, Youtube, FileText].map((Icon, i) => (
               <a
                 key={i}
-                href="#"
+                href="https://specimen-prep.vercel.app/"
                 className="text-gray-400 hover:text-white transition-colors transform hover:scale-110"
               >
                 <Icon className="w-5 h-5" />

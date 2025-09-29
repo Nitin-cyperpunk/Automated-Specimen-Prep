@@ -52,14 +52,20 @@ const FAQ = () => {
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get answers to common questions about CablePrep AI system implementation and operation
-          </p>
-        </div>
+        <div className="text-center mb-16 relative">
+  <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
+    <div className="w-72 h-72 bg-gradient-to-tr from-primary to-purple-400 rounded-full opacity-20 blur-3xl animate-accordion-down"></div>
+  </div>
+
+  <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500 mb-4 animate-fade-in-up">
+    Frequently Asked Questions
+  </h2>
+
+  <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up delay-200">
+    Get answers to common questions about <span className="font-medium text-primary">CablePrep AI</span> system implementation and operation.
+  </p>
+</div>
+
 
         <div className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
@@ -67,7 +73,7 @@ const FAQ = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-card rounded-lg border px-6"
+                className="bg-card rounded-lg border px-6  backdrop-blur-sm shadow-lg"
               >
                 <AccordionTrigger className="text-left hover:no-underline py-6">
                   <span className="font-semibold text-foreground">{faq.question}</span>
