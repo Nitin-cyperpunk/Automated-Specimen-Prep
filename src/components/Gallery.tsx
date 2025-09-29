@@ -2,17 +2,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const items = [
   {
-    src: "/images/breadboard-setup.jpg",
+    src: "/breadboard-setup.png",
     title: "Electronics Wiring",
     caption: "ESP32 + A4988 drivers, OLED, and 12V power layout.",
   },
   {
-    src: "/images/mechanical-drawing.jpg",
+    src: "/mechanical-drawing.jpg",
     title: "Mechanical Layout",
     caption: "Board-level dimensions and mounting blueprint (mm).",
   },
   {
-    src: "/images/ui-and-cutter.jpg",
+    src: "/ui-and-cutter.png",
     title: "UI and Cutter",
     caption: "On-device OLED controls and automated stripping action.",
   },
@@ -48,10 +48,10 @@ const Gallery = () => {
       </div>
 
       {/*
-        Place the three images in the public/images directory with these filenames:
-        - public/images/breadboard-setup.jpg
-        - public/images/mechanical-drawing.jpg
-        - public/images/ui-and-cutter.jpg
+        Images are expected in the public directory with these filenames:
+        - public/breadboard-setup.png
+        - public/mechanical-drawing.jpg
+        - public/ui-and-cutter.png
       */}
     </section>
   );
