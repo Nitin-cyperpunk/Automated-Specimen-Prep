@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { 
   Brain, 
@@ -7,6 +8,10 @@ import {
   TrendingUp, 
   Cloud 
 } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const features = [
   {
@@ -48,6 +53,25 @@ const features = [
 ];
 
 const Features = () => {
+  const cardsRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    cardsRef.current.forEach((card, index) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 0.6,
+        delay: index * 0.15,
+        ease: "power3.out"
+      });
+    });
+  }, []);
+
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -67,7 +91,8 @@ const Features = () => {
             return (
               <Card 
                 key={index} 
-                className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 bg-card/50 backdrop-blur-sm"
+                ref={(el) => el && (cardsRef.current[index] = el)}
+                className="p-6 hover:shadow-xl transition-transform duration-300 hover:-translate-y-2 border-0 bg-card/50 backdrop-blur-sm cursor-pointer"
               >
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">

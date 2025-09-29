@@ -4,13 +4,12 @@ import ComparisonTable from "@/components/ComparisonTable";
 import Features from "@/components/Features";
 import Architecture from "@/components/Architecture";
 import Documentation from "@/components/Documentation";
-import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background top-6">
       <Header />
       <main>
         <Hero />
@@ -18,7 +17,6 @@ const Index = () => {
         <Features />
         <Architecture />
         <Documentation />
-        <Pricing />
         <FAQ />
       </main>
       <Footer />
