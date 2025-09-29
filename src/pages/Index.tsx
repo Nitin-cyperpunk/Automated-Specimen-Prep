@@ -6,6 +6,7 @@ import Architecture from "@/components/Architecture";
 import Documentation from "@/components/Documentation";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import Gallery from "@/components/Gallery";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <ComparisonTable />
         <Features />
         <Architecture />
+        <Gallery />
         <Documentation />
         <FAQ />
       </main>
